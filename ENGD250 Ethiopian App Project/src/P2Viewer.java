@@ -13,7 +13,7 @@ public class P2Viewer {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		int frameWidth = 800;
-		int frameHeight = 800;
+		int frameHeight = 700;
 		
 
 		frame.setSize(frameWidth, frameHeight);
@@ -27,8 +27,8 @@ public class P2Viewer {
 //		frame.add(component3);
 //		frame.add(colorComponent);
 		
-		frame.getContentPane().add(component,BorderLayout.CENTER);
 		frame.getContentPane().add(component3,BorderLayout.NORTH);
+		frame.getContentPane().add(component,BorderLayout.CENTER);
 		frame.getContentPane().add(colorComponent, BorderLayout.SOUTH);
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -33,10 +33,10 @@ public class P2Component extends JComponent {
 		addMouseMotionListener(mousehandler);
 		
 //		adams.add(new P2Shape(10, 100, 8));
-		adams.add(new P2Shape(200, 40, 3));
-		for (int i=0; i<11; i++) {
-			adams.add(new P2Shape(500, 10+50*i, 1));
-		}
+//		adams.add(new P2Shape(200, 40, 3));
+//		for (int i=0; i<11; i++) {
+//			adams.add(new P2Shape(500, 10+50*i, 1));
+//		}
 	}
 	
 	@Override
@@ -104,7 +104,8 @@ public class P2Component extends JComponent {
 					P2Component.this.repaint();
 
 				} else {
-					System.out.println("reserved for later");
+					System.out.println("saved to file");
+					FileWrite.writeFile(inShape.getNodes(), "polyInfo.txt");
 				}
 			} else {
 				if (e.getButton() == MouseEvent.BUTTON1) {

@@ -34,9 +34,9 @@ public class P3Component extends JComponent {
 	protected void paintComponent(Graphics g2) {
 		// Asks the superclass to do its work
 		super.paintComponent(g2);
-		this.setBounds(0, 0, 100, 100);
+		this.setBounds(0, 0, 800, 800);
 		g2.drawImage(img, 0, 0, this);
-		System.out.println("Painting");
+//		System.out.println("Painting");
 
 //		Graphics2D graphics2 = (Graphics2D) g;
 		

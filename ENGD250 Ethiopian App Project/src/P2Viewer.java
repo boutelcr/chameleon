@@ -4,8 +4,6 @@ import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-//repo test note
-
 // @Authors - Caleb Boutell, Sophie Baer, Sage Dooley
 
 public class P2Viewer {
@@ -23,8 +21,6 @@ public class P2Viewer {
 
 		P2Component component = new P2Component();
 		P3Component component3 = new P3Component();
-//		JColorChooser colorComponent = new P2ColorChooser().getColorChooser();
-//		JColorChooser colorComponent = new JColorChooser();
 		JColorChooser colorComponent = component.getColorChooser();
 
 //		frame.add(component);
@@ -34,7 +30,6 @@ public class P2Viewer {
 		frame.getContentPane().add(component,BorderLayout.CENTER);
 		frame.getContentPane().add(component3,BorderLayout.NORTH);
 		frame.getContentPane().add(colorComponent, BorderLayout.SOUTH);
-//		System.out.println(colorComponent.getColor());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);

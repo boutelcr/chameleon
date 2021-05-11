@@ -24,8 +24,7 @@ public class FileWrite {
 	 
 		FileWriter myWriter = new FileWriter(fileName);
 	    for(String dataLine : data) {
-	    	myWriter.write(dataLine);
-//	    	myWriter.write();
+	    	myWriter.write(dataLine + "\n");
 		}
 	      myWriter.close();
 	      System.out.println("Successfully wrote to the file.");

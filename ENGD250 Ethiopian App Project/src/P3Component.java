@@ -23,9 +23,9 @@ public class P3Component extends JComponent {
 	public void importImage() {
 		BufferedImage img = null;
 		try {
-			img = ImageIO.read(new File("Images/11.PNG"));
+			img = ImageIO.read(new File("ENGD250 Ethiopian App Project/Images/ShoeTemplate.png"));
 		} catch (IOException e) {
-			System.out.println("Couldnt read Images/11.PNG");
+			System.out.println("Couldnt read image");
 		}
 		this.img = img;
 

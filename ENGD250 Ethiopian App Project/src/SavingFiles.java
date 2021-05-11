@@ -6,7 +6,7 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class SavingFiles {
 	public static void main(String[] args) {
 	    try {
-	      File myObj = new File("fileyeet.txt");
+	      File myObj = new File("fileTest.txt");
 	      if (myObj.createNewFile()) {
 	        System.out.println("File created: " + myObj.getName());
 	      } else {

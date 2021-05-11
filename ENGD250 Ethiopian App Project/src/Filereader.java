@@ -7,7 +7,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 public class Filereader {
 	public static void main(String[] args) {
 	    try {
-	      File myObj = new File("fileyeet.txt");
+	      File myObj = new File("fileTest.txt");
 	      Scanner myReader = new Scanner(myObj);
 	      while (myReader.hasNextLine()) {
 	        String data = myReader.nextLine();

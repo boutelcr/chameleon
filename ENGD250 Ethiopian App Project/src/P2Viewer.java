@@ -12,8 +12,8 @@ public class P2Viewer {
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		int frameWidth = 600;
-		int frameHeight = 600;
+		int frameWidth = 800;
+		int frameHeight = 800;
 		
 
 		frame.setSize(frameWidth, frameHeight);

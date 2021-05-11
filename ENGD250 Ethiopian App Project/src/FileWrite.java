@@ -8,8 +8,8 @@ import java.io.IOException;  // Import the IOException class to handle errors
 public class FileWrite {
 	public static void main(String[] args) {
 	    try {
-	      FileWriter myWriter = new FileWriter("fileyeet.txt");
-	      myWriter.write("yeet yeet yeet yeet yuh yeet");
+	      FileWriter myWriter = new FileWriter("fileTest.txt");
+	      myWriter.write("yeet yeet yeet yeet yuh yeet 5/11/21");
 	      myWriter.close();
 	      System.out.println("Successfully wrote to the file.");
 	    } catch (IOException e) {

@@ -40,6 +40,21 @@ public class P2Shape {
 		return body;
 	}
 
+	public ArrayList<String> getNodes() {
+		ArrayList<String> nodes = new ArrayList<String>();
+		String thisLine;
+		Integer x;
+		Integer y;
+		
+		for (int i=0; i<body.npoints; i++) {
+			x = body.xpoints[i];
+			y = body.ypoints[i];
+			thisLine = x.toString() + " " + y.toString();
+			nodes.add(thisLine);
+		}
+		return nodes;
+	}
+
 
 	public void setBody(int x, int y, int scale) {
 //		this.body = new Rectangle(x, y, x+50, y+50);;
@@ -60,4 +75,5 @@ public class P2Shape {
 		this.color = color;
 	}
 	
+		
 }

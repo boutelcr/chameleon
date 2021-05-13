@@ -9,11 +9,7 @@ import javax.swing.event.ChangeListener;
 // @Author -- Sage Dooley, Caleb Boutell
 
 public class P2ColorChooser implements ChangeListener{
-
-	JFrame window;
 	JColorChooser colorChooser;
-	JPanel pan;
-	JPanel colorPan;
 	
 	public static void main(String[] thing) {
 		
@@ -22,18 +18,7 @@ public class P2ColorChooser implements ChangeListener{
 	}
 	
 	public P2ColorChooser() {
-		
-//		window = new JFrame();
-//		window.setSize(900, 700);
-//		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		window.getContentPane().setBackground(Color.GRAY);;
-//		window.setLayout(null);
-//		
-//		pan = new JPanel();
-//		pan.setBounds(100, 50, 625, 250);
-//		pan.setBackground(Color.GREEN);
-//		window.add(pan);
-//		
+
 		colorChooser = new JColorChooser();
 		colorChooser.getSelectionModel().addChangeListener(this);
 		
@@ -48,24 +33,12 @@ public class P2ColorChooser implements ChangeListener{
 		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[1]); // HSV
 //		colorChooser.removeChooserPanel(colorChooser.getChooserPanels()[0]); // Swatch
 		
-//		pan.add(colorChooser);
-		
-		// This demo is a demonstration of how we can change the color of a panel with the choosers.
-//		colorPan = new JPanel();
-//		colorPan.setBounds(200, 420, 400, 100);
-//		colorPan.setBackground(Color.WHITE);
-//		window.add(colorPan);		
-//		
-//		window.setVisible(true);
-		
 	}
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		// Auto-generated method stub
 		Color newColor = colorChooser.getColor();
-//		System.out.println(colorChooser.getColor());
-//		colorPan.setBackground(newColor);
 	}
 	
 	public Color getColor() {

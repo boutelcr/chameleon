@@ -2,6 +2,7 @@ import java.awt.Rectangle;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.awt.Color;
+import java.awt.Point;
 import java.awt.Polygon;
 
 // @Author - Caleb Boutell
@@ -49,12 +50,55 @@ public class P2Shape {
 		for (int i=0; i<body.npoints; i++) {
 			x = body.xpoints[i];
 			y = body.ypoints[i];
-			thisLine = x.toString() + " " + y.toString();
+			thisLine = x.toString() + "|" + y.toString();
 			nodes.add(thisLine);
 		}
+		
+		nodes.add("poly finished");
+		
 		return nodes;
 	}
 
+	
+	public static ArrayList<P2Shape> polyRead(ArrayList<String> data) {
+		ArrayList<P2Shape> shapes = new ArrayList<P2Shape>();
+		ArrayList<Point2D> nodes = new ArrayList<Point2D>();
+		char charHere;
+		int coord = 0;
+		int x = 0;
+		int y = 0;
+//		boolean readingCoord = false;
+
+		for (String dataLine : data) {
+			if (dataLine.equals("poly finished")) {
+//				readingCoord = true;
+				System.out.println("first line read successfully");
+				shapes.add(new P2Shape(nodes));
+				System.out.println("shape added");
+				nodes.clear();
+				
+			}
+			else {				
+				System.out.println("another line read successfully");
+				for (int i=0; i<dataLine.length(); i++) {
+					charHere = dataLine.charAt(i);
+					if (charHere == '|') {
+						x = coord;
+						coord = 0;
+					} else {
+						coord = coord*10 + Character.getNumericValue(charHere);
+					}
+				}
+				y = coord;
+				nodes.add(new Point(x,y));
+				System.out.println("added node: " + x + ", " + y);
+				coord = 0;
+			}
+			
+		}
+		
+		return shapes;
+	}
 
 	public void setBody(int x, int y, int scale) {
 //		this.body = new Rectangle(x, y, x+50, y+50);;

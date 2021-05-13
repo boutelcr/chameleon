@@ -24,6 +24,7 @@ public class P2Component extends JComponent {
 	ArrayList<Point2D> newAdamNodes = new ArrayList<Point2D>();
 	JColorChooser myColorChooser = new P2ColorChooser().getColorChooser();
 	ArrayList<Ellipse2D> guidePoints = new ArrayList<Ellipse2D>();
+	P2Shape craigLoad = new P2Shape(10, 10, 1);
 	
 	public P2Component() {
 		super();
@@ -32,7 +33,8 @@ public class P2Component extends JComponent {
 		addMouseListener(mousehandler);
 		addMouseMotionListener(mousehandler);
 		
-//		adams.add(new P2Shape(10, 100, 8));
+		
+		adams.add(craigLoad);
 //		adams.add(new P2Shape(200, 40, 3));
 //		for (int i=0; i<11; i++) {
 //			adams.add(new P2Shape(500, 10+50*i, 1));
@@ -94,7 +96,15 @@ public class P2Component extends JComponent {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			P2Shape inShape = P2Component.this.inShape(e.getPoint());
-			if (inShape != null) {
+			if (inShape != null && inShape.equals(craigLoad)) {
+				System.out.println("Loading old adams");
+				for (P2Shape adam : P2Shape.polyRead(Filereader.readFile("polyInfo.txt"))) {
+					adams.add(adam);
+					P2Component.this.repaint();
+				}
+			}
+			
+			else if (inShape != null) {
 				if (e.getButton() == MouseEvent.BUTTON1) {
 					System.out.println("womp");
 					

@@ -8,13 +8,8 @@ import javax.swing.JPanel;
 // @Authors - Caleb Boutell, Sophie Baer, Sage Dooley
 
 public class P2Viewer {
-	JButton newDesign;
-	JButton pastDesign;
-	//A viewer for prototype 2 of our concept
 	
-	public static void main(String[] args) {
-		
-		new P2Viewer();
+	public P2Viewer() {
 		
 		JFrame frame = new JFrame();
 		int frameWidth = 800;
@@ -34,7 +29,10 @@ public class P2Viewer {
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
+	}
+	
+	public static void main(String[] args) {
+		new P2Viewer();
 	}
 	
 }

@@ -105,7 +105,7 @@ public class P2Component extends JComponent {
 					}
 				} else {
 					System.out.println("Clearing save data");
-//					FileWrite.clearFile();
+					FileWrite.clearFile("polyInfo.txt");
 				}
 				
 			}

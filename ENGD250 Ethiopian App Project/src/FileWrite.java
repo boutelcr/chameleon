@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
 import java.util.ArrayList;
@@ -19,19 +20,33 @@ public class FileWrite {
 	    }
 	  }
 	public static void writeFile(ArrayList<String> data, String fileName) {
-	try {
-		SavingFiles.saveFile(fileName);
-	 
-		FileWriter myWriter = new FileWriter(fileName);
-	    for(String dataLine : data) {
-	    	myWriter.write(dataLine + "\n");
+		try {
+			ArrayList<String> oldData = Filereader.readFile(fileName);
+			SavingFiles.saveFile(fileName);
+			
+			
+
+			FileWriter myWriter =new FileWriter(fileName);
+			
+			for (String dataLine : oldData) {
+				myWriter.write(dataLine + "\n");
+			}
+			
+			for (String dataLine : data) {
+				myWriter.write(dataLine + "\n");
+			}
+			myWriter.close();
+			System.out.println("Successfully wrote to the file.");
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
 		}
-	      myWriter.close();
-	      System.out.println("Successfully wrote to the file.");
-	    } catch (IOException e) {
-	      System.out.println("An error occurred.");
-	      e.printStackTrace();
-	    }
 	  }
+
+	public static void clearFile(String fileName) {
+		File myObj = new File(fileName);
+		myObj.delete();
+		
+	}
 
 }

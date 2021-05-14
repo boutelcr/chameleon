@@ -67,12 +67,9 @@ public class P2Shape {
 		int coord = 0;
 		int x = 0;
 		int y = 0;
-//		boolean readingCoord = false;
 
 		for (String dataLine : data) {
 			if (dataLine.equals("poly finished")) {
-//				readingCoord = true;
-				System.out.println("first line read successfully");
 				shapes.add(new P2Shape(nodes));
 				System.out.println("shape added");
 				nodes.clear();

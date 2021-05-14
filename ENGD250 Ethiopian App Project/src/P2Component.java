@@ -97,11 +97,17 @@ public class P2Component extends JComponent {
 		public void mouseClicked(MouseEvent e) {
 			P2Shape inShape = P2Component.this.inShape(e.getPoint());
 			if (inShape != null && inShape.equals(craigLoad)) {
-				System.out.println("Loading old adams");
-				for (P2Shape adam : P2Shape.polyRead(Filereader.readFile("polyInfo.txt"))) {
-					adams.add(adam);
-					P2Component.this.repaint();
+				if (e.getButton() == MouseEvent.BUTTON1) {
+					System.out.println("Loading old adams");
+					for (P2Shape adam : P2Shape.polyRead(Filereader.readFile("polyInfo.txt"))) {
+						adams.add(adam);
+						P2Component.this.repaint();
+					}
+				} else {
+					System.out.println("Clearing save data");
+					FileWrite.clearFile("polyInfo.txt");
 				}
+				
 			}
 			
 			else if (inShape != null) {

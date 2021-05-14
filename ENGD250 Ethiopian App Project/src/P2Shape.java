@@ -35,13 +35,27 @@ public class P2Shape {
 		body = new Polygon(xPoints, yPoints, l);
 		color = new Color(0,0,0);
 	}
+	
+	public P2Shape(ArrayList<Point2D> nodes, Color color) {
+		int l = nodes.size();
+		int[] xPoints = new int[l];
+		int[] yPoints = new int[l];
+		
+		for (int i=0; i<l; i++) {
+			xPoints[i] = (int) nodes.get(i).getX();
+			yPoints[i] = (int) nodes.get(i).getY();
+		}
+		
+		body = new Polygon(xPoints, yPoints, l);
+		color = new Color(0,0,0);
+	}
 
 
 	public Polygon getBody() {
 		return body;
 	}
 
-	public ArrayList<String> getNodes() {
+	public ArrayList<String> getData() {
 		ArrayList<String> nodes = new ArrayList<String>();
 		String thisLine;
 		Integer x;
@@ -53,7 +67,7 @@ public class P2Shape {
 			thisLine = x.toString() + "|" + y.toString();
 			nodes.add(thisLine);
 		}
-		
+		nodes.add("c " + roundToThree(color.getRed()) + " " + roundToThree(color.getGreen()) + " " + roundToThree(color.getBlue()));
 		nodes.add("poly finished");
 		
 		return nodes;
@@ -67,15 +81,24 @@ public class P2Shape {
 		int coord = 0;
 		int x = 0;
 		int y = 0;
-
+		int colorVal = 0;
+		int[] rgb = {0,0,0};
+		
 		for (String dataLine : data) {
 			if (dataLine.equals("poly finished")) {
-				shapes.add(new P2Shape(nodes));
+				shapes.add(new P2Shape(nodes, new Color(60,60,100)));
 				System.out.println("shape added");
 				nodes.clear();
 				
-			}
-			else {				
+			} else if (dataLine.charAt(0) == 'c') {
+				for (int i=0; i<3; i++) {
+					for (int j=0; j<3; j++) {
+						colorVal = colorVal*10 + Character.getNumericValue(dataLine.charAt(2 + (4*i) + j));
+					}
+					rgb[i] = colorVal;
+					colorVal = 0;
+				}
+			} else {				
 				System.out.println("another line read successfully");
 				for (int i=0; i<dataLine.length(); i++) {
 					charHere = dataLine.charAt(i);
@@ -117,4 +140,13 @@ public class P2Shape {
 	}
 	
 		
+	
+	public String roundToThree(Integer colorVal) {
+		String threeStr;
+		if (colorVal > 99) threeStr = " " + colorVal.toString();
+		else if (colorVal > 9) threeStr = " 0" + colorVal.toString();
+		else threeStr = " 00" + colorVal.toString();	
+		
+		return threeStr;
+	}
 }

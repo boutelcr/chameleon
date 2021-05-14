@@ -121,7 +121,7 @@ public class P2Component extends JComponent {
 
 				} else {
 					System.out.println("saved to file");
-					FileWrite.writeFile(inShape.getNodes(), "polyInfo.txt");
+					FileWrite.writeFile(inShape.getData(), "polyInfo.txt");
 				}
 			} else {
 				if (e.getButton() == MouseEvent.BUTTON1) {

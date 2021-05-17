@@ -36,7 +36,7 @@ public class P2Shape {
 		color = new Color(0,0,0);
 	}
 	
-	public P2Shape(ArrayList<Point2D> nodes, Color color) {
+	public P2Shape(ArrayList<Point2D> nodes, Color inputColor) {
 		int l = nodes.size();
 		int[] xPoints = new int[l];
 		int[] yPoints = new int[l];
@@ -47,7 +47,7 @@ public class P2Shape {
 		}
 		
 		body = new Polygon(xPoints, yPoints, l);
-		color = new Color(0,0,0);
+		this.color = inputColor;
 	}
 
 
@@ -86,18 +86,21 @@ public class P2Shape {
 		
 		for (String dataLine : data) {
 			if (dataLine.equals("poly finished")) {
-				shapes.add(new P2Shape(nodes, new Color(60,60,100)));
+//				shapes.add(new P2Shape(nodes));
+				shapes.add(new P2Shape(nodes, new Color(rgb[0], rgb[1], rgb[2])));
 				System.out.println("shape added");
 				nodes.clear();
 				
 			} else if (dataLine.charAt(0) == 'c') {
 				for (int i=0; i<3; i++) {
 					for (int j=0; j<3; j++) {
-						colorVal = colorVal*10 + Character.getNumericValue(dataLine.charAt(2 + (4*i) + j));
+						colorVal = colorVal*10 + Character.getNumericValue(dataLine.charAt(3 + (5*i) + j));
 					}
-					rgb[i] = colorVal;
+					rgb[i] = Math.abs(colorVal);
 					colorVal = 0;
 				}
+				System.out.println(dataLine);
+				System.out.println("Found color: " + rgb[0] + ", " + rgb[1] + ", " + rgb[2]);
 			} else {				
 				System.out.println("another line read successfully");
 				for (int i=0; i<dataLine.length(); i++) {

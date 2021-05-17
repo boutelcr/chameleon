@@ -52,12 +52,12 @@ public class Window_Chameleon {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1190, 824);
+		frame.setBounds(100, 100, 1131, 780);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);;
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 10, 1176, 799);
+		panel.setBounds(0, 10, 1096, 722);
 		panel.setBackground(Color.DARK_GRAY);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -113,26 +113,21 @@ public class Window_Chameleon {
 		JLabel homeShoe = new JLabel("");
 		Image img_1 = new ImageIcon(this.getClass().getResource("home_page_shoe.png")).getImage();
 		homeShoe.setIcon(new ImageIcon(img_1));
-		homeShoe.setBounds(103, 0, 859, 722);
+		homeShoe.setBounds(126, 0, 859, 722);
 		panel.add(homeShoe);
 		
 		JLabel leftSide = new JLabel("");
 		Image img_left = new ImageIcon(this.getClass().getResource("Pattern for Window.png")).getImage();
 		leftSide.setIcon(new ImageIcon(img_left));
-		leftSide.setBounds(0, 0, 91, 722);
+		leftSide.setBounds(0, 0, 122, 722);
 		panel.add(leftSide);
 		
-//		JLabel rightSide = new JLabel("");
-//		Image img_right = new ImageIcon(this.getClass().getResource("Pattern for Window_Two.png")).getImage();
-//		rightSide.setIcon(new ImageIcon(img_right));
-//		rightSide.setBounds(964, 0, 153, 722);
-//		panel.add(rightSide);
-//		
-//		JLabel overlay = new JLabel("");
-//		Image img_2 = new ImageIcon(this.getClass().getResource("Overlay_window_shoe_code.png")).getImage();
-//		overlay.setIcon(new ImageIcon(img_2));
-//		homeShoe.setBounds(298, 90, 885, 744);
-//		panel.add(overlay);
+		JLabel rightSide = new JLabel("");
+		Image img_right = new ImageIcon(this.getClass().getResource("Pattern for Window_Two.png")).getImage();
+		rightSide.setIcon(new ImageIcon(img_right));
+		rightSide.setBounds(972, 0, 122, 722);
+		panel.add(rightSide);
+		
 		
 //		JButton saveDesign = new JButton("Save");
 //		saveDesign.setFont(new Font("Tahoma", Font.PLAIN, 20));

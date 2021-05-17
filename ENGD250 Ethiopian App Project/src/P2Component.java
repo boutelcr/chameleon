@@ -79,12 +79,13 @@ public class P2Component extends JComponent {
 	}
 	
 	public P2Shape inShape(Point2D point) {
+		P2Shape topAdam = null;
 		for (P2Shape adam : adams) {
 			if (adam.getBody().contains(point.getX(), point.getY())) {
-				return adam;
+				topAdam = adam;
 			}
 		}			
-		return null;
+		return topAdam;
 	}
 	
 	public JColorChooser getColorChooser() {

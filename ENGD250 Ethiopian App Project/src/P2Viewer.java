@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 
 public class P2Viewer {
 	
+	JFrame frame = new JFrame();
+	P2Component component = new P2Component();
+	
 	public P2Viewer() {
 		
 		JFrame frame = new JFrame();
@@ -19,10 +22,10 @@ public class P2Viewer {
 		frame.setSize(frameWidth, frameHeight);
 		frame.setTitle("Click the shapes");
 
-		P2Component component = new P2Component();
+//		P2Component component = new P2Component();
 		P3Component component3 = new P3Component();
 		JColorChooser colorComponent = component.getColorChooser();
-		SavePanel savePanel = new SavePanel(component);
+		SavePanel savePanel = new SavePanel(this, component);
 
 		frame.getContentPane().add(component3,BorderLayout.NORTH);
 		frame.getContentPane().add(component,BorderLayout.CENTER);
@@ -35,6 +38,14 @@ public class P2Viewer {
 	
 	public static void main(String[] args) {
 		new P2Viewer();
+	}
+	
+	public P2Component getWorkSpace() {
+		return this.component;
+	}
+	
+	public JFrame getFrame() {
+		return this.frame;
 	}
 	
 }

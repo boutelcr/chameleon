@@ -80,7 +80,7 @@ public class Window_Chameleon {
 				// DONE Auto-generated method stub
 				String shoeCodeInput = JOptionPane.showInputDialog("Welcome to Chameleon! Please Enter Shoe Code:");
 				frame.dispose();
-				new P2Viewer();
+				P2Viewer viewer = new P2Viewer();
 			}
 			
 		});
@@ -99,7 +99,8 @@ public class Window_Chameleon {
 				//panel.add(overlay);
 				String shoeCodeInput = JOptionPane.showInputDialog("Welcome back! Please Enter Shoe Code:");
 				frame.dispose();
-				new P2Viewer();
+				P2Viewer viewer = new P2Viewer();
+				viewer.getWorkSpace().loadAdams(shoeCodeInput);
 			}
 			
 		});
@@ -126,28 +127,10 @@ public class Window_Chameleon {
 		Image img_right = new ImageIcon(this.getClass().getResource("Pattern for Window_Two.png")).getImage();
 		rightSide.setIcon(new ImageIcon(img_right));
 		rightSide.setBounds(972, 0, 122, 722);
-		panel.add(rightSide);
-		
-		
-//		JButton saveDesign = new JButton("Save");
-//		saveDesign.setFont(new Font("Tahoma", Font.PLAIN, 20));
-//		saveDesign.setBounds(20, 20, 87, 57);
-//		panel.add(saveDesign);
-//		
-//		
-//		saveDesign.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// DONE Auto-generated method stub
-//				//panel.add(overlay);
-//				String saveCodeInput = JOptionPane.showInputDialog("Are you sure you want to save the design?");
-//				
-//			}
-//			
-//		});
-		
-	}
+		panel.add(rightSide);	
+		}
 	
-	
+//	public static void returnHome() {
+//		viewer.getFrame.dispose()
+//	}
 }

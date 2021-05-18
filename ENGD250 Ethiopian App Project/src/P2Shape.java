@@ -99,10 +99,8 @@ public class P2Shape {
 					rgb[i] = Math.abs(colorVal);
 					colorVal = 0;
 				}
-				System.out.println(dataLine);
 				System.out.println("Found color: " + rgb[0] + ", " + rgb[1] + ", " + rgb[2]);
 			} else {				
-				System.out.println("another line read successfully");
 				for (int i=0; i<dataLine.length(); i++) {
 					charHere = dataLine.charAt(i);
 					if (charHere == '|') {

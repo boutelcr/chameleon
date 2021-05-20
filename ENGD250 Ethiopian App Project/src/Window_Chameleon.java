@@ -20,7 +20,7 @@ import java.awt.Button;
 
 // @Author - Sage Dooley, Caleb Boutell
 
-public class Window_Chameleon {
+public class Window_Chameleon { //created with the window builder plugin
 	ImageIcon homePage = new ImageIcon("home_page_shoe.png");
 	private JFrame frame;
 
@@ -76,12 +76,12 @@ public class Window_Chameleon {
 		newDesign.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) { // what to do when the "New Design" button is clicked
 				// DONE Auto-generated method stub
-				String shoeCodeInput = JOptionPane.showInputDialog("Welcome to Chameleon! Please Enter Shoe Code:");
+				String shoeCodeInput = JOptionPane.showInputDialog("Welcome to Chameleon! Please Enter Shoe Code:"); //this feature is mostly representive since there are no real shoes; prompts the user to input a code for the shoes but doesn't do anything
 				frame.dispose();
-				P2Viewer viewer = new P2Viewer();
-				viewer.getWorkSpace().loadAdams("newShoe");
+				P2Viewer viewer = new P2Viewer(); //creates a workspace
+				viewer.getWorkSpace().loadAdams("newShoe"); //loads the blank file
 			}
 			
 		});
@@ -95,13 +95,13 @@ public class Window_Chameleon {
 		pastDesign.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {// what to do when the "Past Design" button is clicked
 				// DONE Auto-generated method stub
 				//panel.add(overlay);
-				String shoeCodeInput = JOptionPane.showInputDialog("Welcome back! Please Enter Shoe Code:");
+				String shoeCodeInput = JOptionPane.showInputDialog("Welcome back! Please Enter Shoe Code:"); //prompts the user to input a name for the file and saves that name to a variable
 				frame.dispose();
-				P2Viewer viewer = new P2Viewer();
-				viewer.getWorkSpace().loadAdams(shoeCodeInput);
+				P2Viewer viewer = new P2Viewer(); //creates a workspace
+				viewer.getWorkSpace().loadAdams(shoeCodeInput); //loads the given file
 			}
 			
 		});
@@ -131,7 +131,7 @@ public class Window_Chameleon {
 		panel.add(rightSide);	
 		}
 	
-//	public static void returnHome() {
+//	public static void returnHome() { //for the unused home button in SavePanel
 //		viewer.getFrame.dispose()
 //	}
 }

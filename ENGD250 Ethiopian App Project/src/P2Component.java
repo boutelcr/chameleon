@@ -14,7 +14,10 @@ import java.util.ArrayList;
 import javax.swing.JColorChooser;
 import javax.swing.JComponent;
 
- // @Authors -- Caleb Boutell, Sophie Baer, Sage Dooley 
+ // @Authors -- Caleb Boutell, Sophie Baer, Sage Dooley, Desirae Webster 
+// P2 viewer is where all of our components that we created our shown in Java Graphics
+//this class displays the shoe image as well as the polygons that were created to display 
+//onto our constructed JFrame
 
 public class P2Component extends JComponent {
 

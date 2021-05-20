@@ -19,6 +19,11 @@ public class FileWrite {
 	      e.printStackTrace();
 	    }
 	  }
+	//Makes a file writer called myWriter inside the file named “fileyeet.txt”. 
+	//then writes in the file “yeet yeet yeet… “. Then closes the writer. 
+	//Prints whether the entry was successfully written to that file or 
+	//if it was not and there was some sort of error. 
+	
 	public static void writeFile(ArrayList<String> data, String fileName) {
 		try {
 			ArrayList<String> oldData = Filereader.readFile(fileName);
@@ -40,13 +45,15 @@ public class FileWrite {
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
+			//prints if the data was written to the file successfully or not
 		}
 	  }
 
 	public static void clearFile(String fileName) {
 		File myObj = new File(fileName);
+		//gets the file, calls it myObj
 		myObj.delete();
-		
+		//deletes everything inside the file
 	}
 
 }

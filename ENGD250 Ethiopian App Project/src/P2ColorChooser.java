@@ -8,6 +8,8 @@ import javax.swing.event.ChangeListener;
 
 // @Author -- Sage Dooley, Caleb Boutell
 
+//a color chooser for the editor
+
 public class P2ColorChooser implements ChangeListener{
 	JColorChooser colorChooser;
 	

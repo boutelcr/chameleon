@@ -81,6 +81,7 @@ public class Window_Chameleon {
 				String shoeCodeInput = JOptionPane.showInputDialog("Welcome to Chameleon! Please Enter Shoe Code:");
 				frame.dispose();
 				P2Viewer viewer = new P2Viewer();
+				viewer.getWorkSpace().loadAdams("newShoe");
 			}
 			
 		});

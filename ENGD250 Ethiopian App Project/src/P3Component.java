@@ -11,6 +11,10 @@ import java.awt.*;
 
 // @Author - Desirae Webster
 
+//This class will allow images to be uploaded to our P2 viewer. 
+//Designed this class specifically so that we could upload our shoe image to the code
+//so that we could overlay our polygons on to the image. 
+
 public class P3Component extends JComponent {
 	BufferedImage img;
 

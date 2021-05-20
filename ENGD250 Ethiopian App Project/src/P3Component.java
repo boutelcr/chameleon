@@ -23,7 +23,8 @@ public class P3Component extends JComponent {
 		importImage();
 		// TODO Auto-generated constructor stub
 	}
-
+// Code created a bufferedImage that is called img 
+// then reach into file system to retrieve the image that you want to upload to the P2 viewer 
 	public void importImage() {
 		BufferedImage img = null;
 		try {
@@ -34,7 +35,7 @@ public class P3Component extends JComponent {
 		this.img = img;
 
 	}
-
+//paints the image,creates bounds on the image and draws the image 
 	protected void paintComponent(Graphics g2) {
 		// Asks the superclass to do its work
 		super.paintComponent(g2);

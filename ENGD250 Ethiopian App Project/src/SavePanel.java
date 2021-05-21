@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,15 +18,21 @@ public class SavePanel extends JPanel { //created to extend JPanel so it can be 
 	public SavePanel(P2Viewer viewer, P2Component workSpace) {
 		super();
 		
+		JPanel buttonPanel = new JPanel();
+		
 		JButton loadButton = new JButton("Load file");
 		JButton saveButton = new JButton("Save file");
 		JButton clearButton = new JButton("Clear file");
 		JButton homeButton = new JButton("Homepage"); //a defunct button in hibernation
 		
-		this.add(loadButton);
-		this.add(saveButton);
-		this.add(clearButton);
-//		this.add(homeButton);
+		buttonPanel.add(loadButton);
+		buttonPanel.add(saveButton);
+		buttonPanel.add(clearButton);
+		buttonPanel.add(homeButton);
+		
+		buttonPanel.setLayout(new GridLayout(2,2)); //had to create a gridlayout to stack the buttons, it was messing with the rendering.
+		
+		this.add(buttonPanel);
 		
 		class loadSensor implements ActionListener { // what to do when pressed
 			public void actionPerformed(ActionEvent e) {
@@ -51,18 +58,22 @@ public class SavePanel extends JPanel { //created to extend JPanel so it can be 
 			}
 		}
 		
-//		class homeSensor implements ActionListener {
-//			public void actionPerformed(ActionEvent e) {
-//				System.out.println("home here");
-//				viewer.getFrame.dispose();
-//				Window_Chameleon.returnHome();
-//			}
-//		}
+		class homeSensor implements ActionListener {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("home here");
+				// creates new window
+				Window_Chameleon wind = new Window_Chameleon();
+				wind.initialize();
+				wind.frame.setVisible(true);
+				// destroys current window
+				viewer.killFrame();
+			}
+		}
 		
 		loadButton.addActionListener(new loadSensor());
 		saveButton.addActionListener(new saveSensor());
 		clearButton.addActionListener(new clearSensor());
-//		homeButton.addActionListener(new homeSensor());
+		homeButton.addActionListener(new homeSensor());
 	}
 	
 	

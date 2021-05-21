@@ -20,7 +20,7 @@ public class P2Viewer {
 	
 	public P2Viewer() {
 		
-		JFrame frame = new JFrame();
+		frame = new JFrame();
 		int frameWidth = 1000;
 		int frameHeight = 700;
 		
@@ -51,7 +51,11 @@ public class P2Viewer {
 	}
 	
 	public JFrame getFrame() {
-		return this.frame;
+		return frame;
+	}
+	
+	public void killFrame() {
+		frame.dispose();
 	}
 	
 }

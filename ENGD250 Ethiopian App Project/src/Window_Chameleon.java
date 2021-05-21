@@ -22,12 +22,12 @@ import java.awt.Button;
 
 public class Window_Chameleon { //created with the window builder plugin
 	ImageIcon homePage = new ImageIcon("home_page_shoe.png");
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) { // default for window builder
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -50,24 +50,22 @@ public class Window_Chameleon { //created with the window builder plugin
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
+		
+		// Creates the frame for Window_Chameleon
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1131, 780);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);;
 		
+		// Creates a panel for Window_Chameleon
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 10, 1096, 722);
 		panel.setBackground(Color.DARK_GRAY);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JPanel overPan = new JPanel();
-		overPan.setBackground(Color.BLUE);
-		overPan.setBounds(10,10,600,600);
-//		frame.getContentPane().add(overPan);
-//		overPan.setLayout(null);
-		
+		// This creates the button to open P2Viewer
 		JButton newDesign = new JButton("New Design");
 		newDesign.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		newDesign.setBounds(457, 238, 153, 84);
@@ -97,7 +95,6 @@ public class Window_Chameleon { //created with the window builder plugin
 			@Override
 			public void actionPerformed(ActionEvent e) {// what to do when the "Past Design" button is clicked
 				// DONE Auto-generated method stub
-				//panel.add(overlay);
 				String shoeCodeInput = JOptionPane.showInputDialog("Welcome back! Please Enter Shoe Code:"); //prompts the user to input a name for the file and saves that name to a variable
 				frame.dispose();
 				P2Viewer viewer = new P2Viewer(); //creates a workspace
@@ -106,32 +103,33 @@ public class Window_Chameleon { //created with the window builder plugin
 			
 		});
 		
-		JLabel welcome = new JLabel("Welcome to Chameleon");
-		welcome.setForeground(Color.WHITE);
-		welcome.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		welcome.setBounds(321, 48, 436, 57);
+		//This creates a title of the Welcome Page
+		JLabel welcome = new JLabel("Welcome to Chameleon"); //text for the title
+		welcome.setForeground(Color.WHITE); //color of the font
+		welcome.setFont(new Font("Tahoma", Font.PLAIN, 40)); //formats the font
+		welcome.setBounds(321, 48, 436, 57); //this is the location of the label
 		panel.add(welcome);
 		
-		JLabel homeShoe = new JLabel("");
-		Image img_1 = new ImageIcon(this.getClass().getResource("home_page_shoe.png")).getImage();
-		homeShoe.setIcon(new ImageIcon(img_1));
+		// This uses a label to input an image for the background of the welcome page
+		JLabel homeShoe = new JLabel(""); // does not have text to ensure an empty box
+		Image img_1 = new ImageIcon(this.getClass().getResource("home_page_shoe.png")).getImage(); //puts the image from the image path
+		homeShoe.setIcon(new ImageIcon(img_1)); //displays the icon
 		homeShoe.setBounds(126, 0, 859, 722);
 		panel.add(homeShoe);
 		
+		// This uses a label to put a traditional Ethiopian pattern on the left side of the window
 		JLabel leftSide = new JLabel("");
 		Image img_left = new ImageIcon(this.getClass().getResource("Pattern for Window.png")).getImage();
 		leftSide.setIcon(new ImageIcon(img_left));
 		leftSide.setBounds(0, 0, 122, 722);
 		panel.add(leftSide);
 		
+		// This uses a label to put a traditional Ethiopian pattern on the right side of the window
 		JLabel rightSide = new JLabel("");
 		Image img_right = new ImageIcon(this.getClass().getResource("Pattern for Window_Two.png")).getImage();
 		rightSide.setIcon(new ImageIcon(img_right));
 		rightSide.setBounds(972, 0, 122, 722);
 		panel.add(rightSide);	
 		}
-	
-//	public static void returnHome() { //for the unused home button in SavePanel
-//		viewer.getFrame.dispose()
-//	}
+
 }
